@@ -1,0 +1,5 @@
+remove Lock = Caps_Lock
+keysym Caps_Lock = Control_L
+add Lock = Caps_Lock
+add Control = Control_L
+keysym ISO_Level3_Shift = Multi_key ISO_Level3_Shift
