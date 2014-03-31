@@ -1,6 +1,60 @@
-filetype on
-filetype plugin on
-filetype indent on
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+"set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+" alternatively, pass a path where Vundle should install plugins
+"let path = '~/some/path/here'
+"call vundle#rc(path)
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/vundle'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between here and filetype plugin indent on.
+" scripts on GitHub repos
+Plugin 'tpope/vim-fugitive'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'tpope/vim-rails.git'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" scripts from http://vim-scripts.org/vim/scripts.html
+Plugin 'L9'
+Plugin 'FuzzyFinder'
+" scripts not on GitHub
+Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+" Plugin 'file:///home/gmarik/path/to/plugin'
+
+Plugin 'bufexplorer.zip'
+Plugin 'taglist-plus'
+
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "garbas/vim-snipmate"
+" Optional:
+Bundle "honza/vim-snippets"
+
+Plugin 'SuperTab'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/nerdcommenter'
+
+filetype plugin indent on     " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList          - list configured plugins
+" :PluginInstall(!)    - install (update) plugins
+" :PluginSearch(!) foo - search (or refresh cache first) for foo
+" :PluginClean(!)      - confirm (or auto-approve) removal of unused plugins
+"
+" see :h vundle for more details or wiki for FAQ
+" NOTE: comments after Plugin commands are not allowed.
+" Put your stuff after this line
+
 set ts=4
 set sw=4
 set noexpandtab
@@ -19,15 +73,8 @@ set background=dark
 set hlsearch
 set incsearch
 set hlsearch
-
 nmap <silent> <space> :nohlsearch<CR>
 
-nnoremap <A-j> :m+<CR>==
-nnoremap <A-k> :m-2<CR>==
-inoremap <A-j> <Esc>:m+<CR>==gi
-inoremap <A-k> <Esc>:m-2<CR>==gi
-vnoremap <A-j> :m'>+<CR>gv=gv
-vnoremap <A-k> :m-2<CR>gv=gv
 
 "FuzzyFinder maps
 nnoremap <C-t> :<C-u>FufFile **/<CR> 
@@ -37,16 +84,6 @@ nnoremap <F4> :NERDTree<CR>
 "Doxgem comments structure
 nmap <F6> :Dox <CR>
 
-let Tlist_Use_Right_Window = 1
-
-set ofu=syntaxcomplete#Complete
-autocmd FileType javascript let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
-autocmd FileType ruby,tex,plaintex set tabstop=2|set shiftwidth=2|set expandtab
-autocmd FileType java set tags+=~/.tags/java_tags
-autocmd FileType java set tags+=~/.tags/android_tags
-
-set runtimepath+=/home/aeliton/.vim/vim-addons/vim-addon-manager
-call vam#ActivateAddons(["bufexplorer.zip", "vim-snippets", "SuperTab%182", "The_NERD_Commenter", "The_NERD_tree", "FuzzyFinder", "fugitive", "rails", "LaTeX-Suite_aka_Vim-LaTeX", "Tabular"], {'auto_install' : 0})
 
 
   
