@@ -40,6 +40,7 @@ Bundle "honza/vim-snippets"
 Plugin 'SuperTab'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
+Bundle 'godlygeek/tabular'
 
 filetype plugin indent on     " required
 " To ignore plugin indent changes, instead use:
@@ -57,7 +58,7 @@ filetype plugin indent on     " required
 
 set ts=4
 set sw=4
-set noexpandtab
+set expandtab
 set nocompatible
 set sw=4
 set smarttab
