@@ -24,23 +24,27 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'L9'
 Plugin 'FuzzyFinder'
 " scripts not on GitHub
-Plugin 'git://git.wincent.com/command-t.git'
+" Plugin 'git://git.wincent.com/command-t.git'
 " git repos on your local machine (i.e. when working on your own plugin)
 " Plugin 'file:///home/gmarik/path/to/plugin'
 
 Plugin 'bufexplorer.zip'
 Plugin 'taglist-plus'
+Plugin 'SuperTab'
+Plugin 'DrawIt'
 
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
-Bundle "garbas/vim-snipmate"
+Bundle "SirVer/ultisnips"
 " Optional:
 Bundle "honza/vim-snippets"
 
-Plugin 'SuperTab'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'godlygeek/tabular'
+Bundle 'plasticboy/vim-markdown'
+Bundle "Chiel92/vim-autoformat"
+Bundle "klen/python-mode"
 
 filetype plugin indent on     " required
 " To ignore plugin indent changes, instead use:
@@ -75,16 +79,30 @@ set hlsearch
 set incsearch
 set hlsearch
 nmap <silent> <space> :nohlsearch<CR>
+set listchars=tab:▸\ ,eol:¬
+
 
 
 "FuzzyFinder maps
-nnoremap <C-t> :<C-u>FufFile **/<CR> 
+"nnoremap <C-t> :<C-u>FufFile **/<CR> 
 
 nnoremap <F4> :NERDTree<CR> 
 
 "Doxgem comments structure
 nmap <F6> :Dox <CR>
 
+autocmd Filetype html setlocal ts=2 sts=2 sw=2
+autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
+autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
+autocmd Filetype cpp         setlocal ts=4 sts=4 expandtab sw=4
+
+nmap <leader>l :set list!<CR>
+
+let g:formatprg_python = "autopep8"
+let g:formatprg_python = "-s"
+let g:formatprg_c = "astyle"
+let g:formatprg_args_c = "--style=knf -s"
 
 
-  
+" Override go-to.definition key shortcut to Ctrl-]
+let g:pymode_rope_goto_definition_bind = "<C-]>"
