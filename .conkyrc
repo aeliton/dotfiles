@@ -5,5 +5,6 @@ update_interval 2
 total_run_times 0
 use_spacer none
 
+
 TEXT
-${cpu cpu1}% / ${cpu cpu2}%  :: ${acpitemp}c :: $memperc% ($mem) :: ${downspeed eth0}K/s ${upspeed eth0}K/s :: ${time %a %b %d %I:%M%P}
+[${time %a %b %d %I:%M%P}] [cpu ${cpu cpu1}%|${cpu cpu2}%|${cpu cpu3}%|${cpu cpu4}%] [mem $memperc% ($mem)] [bat ${battery_percent BAT0}%|${battery_percent BAT1}%]
