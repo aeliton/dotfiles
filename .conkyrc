@@ -1,10 +1,12 @@
-out_to_console yes
-out_to_x no
-background no
-update_interval 2
-total_run_times 0
-use_spacer none
+conky.config = {
+    out_to_console=true,
+    out_to_x=false,
+    background=false,
+    update_interval=2,
+    total_run_times=0,
+    use_spacer='none'
+}
 
-
-TEXT
-[${time %a %b %d %I:%M%P}] [cpu ${cpu cpu1}%|${cpu cpu2}%|${cpu cpu3}%|${cpu cpu4}%] [mem $memperc% ($mem)] [bat ${battery_percent BAT0}%|${battery_percent BAT1}%]
+conky.text = [[
+[${time %a %b %d %I:%M%P}] [cpu ${cpu cpu1}%|${cpu cpu2}%|${cpu cpu3}%|${cpu cpu4}%] [mem $memperc% ($mem)] [bat ${battery_percent BAT0}%]
+]]
