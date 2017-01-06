@@ -2,14 +2,14 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 "set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
 " alternatively, pass a path where Vundle should install plugins
 "let path = '~/some/path/here'
 "call vundle#rc(path)
 
 " let Vundle manage Vundle, required
-Plugin 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between here and filetype plugin indent on.
@@ -45,6 +45,10 @@ Bundle 'godlygeek/tabular'
 Bundle 'plasticboy/vim-markdown'
 Bundle "Chiel92/vim-autoformat"
 Bundle "klen/python-mode"
+Bundle "tpope/vim-surround"
+
+
+Bundle "elixir-lang/vim-elixir"
 
 filetype plugin indent on     " required
 " To ignore plugin indent changes, instead use:
@@ -106,3 +110,5 @@ let g:formatprg_args_c = "--style=knf -s"
 
 " Override go-to.definition key shortcut to Ctrl-]
 let g:pymode_rope_goto_definition_bind = "<C-]>"
+
+set mouse=a
