@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+setxkbmap us -option compose:ralt -option ctrl:nocaps
+
 # fix dwm java bad behavior
 wmname LG3D
 
