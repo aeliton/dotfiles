@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-setxkbmap us -option compose:ralt -option ctrl:nocaps
-
 # fix dwm java bad behavior
 wmname LG3D
 
@@ -12,7 +10,7 @@ if [ -d "$WALLPAPERS" ] && type feh &> /dev/null; then
     # Use feh to display dwm backgrounds
     feh --randomize --bg-fill ~/.wallpapers/* &> /dev/null
 fi
-xrandr --output VGA1 --auto --primary --output HDMI1 --auto --right-of VGA1
+xrandr --output eDP1 --auto --primary --output DP1 --auto --right-of eDP1
 
 # This applies for ThinkPad laptops
 xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation" 1
