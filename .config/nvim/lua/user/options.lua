@@ -14,3 +14,6 @@ vim.o.hlsearch = false
 vim.o.incsearch = true
 
 vim.o.completeopt = 'menu,popup,fuzzy,noselect'
+
+vim.o.list = true
+vim.o.listchars = 'tab:> ,trail:-,nbsp:+,space:·,eol:↵'
