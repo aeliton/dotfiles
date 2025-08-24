@@ -1,7 +1,7 @@
 function devenv() {
   if [ ! -e ${PWD}/devenv/bin/activate ]
   then
-    python -m venv devenv
+    python3 -m venv devenv
     source devenv/bin/activate
     python -m pip install pip --upgrade
     pip install wheel setuptools
@@ -55,7 +55,7 @@ function build() {
     # [[ $? -eq 0 ]] && cmake --preset ${1}
     # [[ $? -eq 0 ]] && cmake --build --preset ${1}
   else
-    BUILD_TYPE=$(echo ${1} | sed 's/\([a-zA-Z]\)\(.*\)/\u\1\2/')
+    BUILD_TYPE=$(echo ${1} | tr '[dr]' '[DR]')
     [[ $? -eq 0 ]] && cmake -B build/${1} -GNinja \
       -DCMAKE_BUILD_TYPE=${BUILD_TYPE} \
       -DCMAKE_TOOLCHAIN_FILE=conan_toolchain.cmake \
