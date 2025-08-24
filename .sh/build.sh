@@ -56,7 +56,7 @@ function build() {
     # [[ $? -eq 0 ]] && cmake --build --preset ${1}
   else
     BUILD_TYPE=$(echo ${1} | sed 's/\([a-zA-Z]\)\(.*\)/\u\1\2/')
-    [[ $? -eq 0 ]] && cmake -B build/${1} \
+    [[ $? -eq 0 ]] && cmake -B build/${1} -GNinja \
       -DCMAKE_BUILD_TYPE=${BUILD_TYPE} \
       -DCMAKE_TOOLCHAIN_FILE=conan_toolchain.cmake \
       -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
