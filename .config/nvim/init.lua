@@ -41,4 +41,4 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 vim.o.winborder = 'rounded'
 
-vim.cmd.colorscheme 'duskfox'
+vim.cmd.colorscheme 'carbonfox'
