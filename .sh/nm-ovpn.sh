@@ -21,6 +21,11 @@ function nm-ovpn-config() {
     return 1
   fi
 
+  if ! dpkg-query -s network-manager-openvpn >/dev/null 2>&1; then
+    echo "sudo apt install network-manager-openvpn"
+    sudo apt install network-manager-openvpn
+  fi
+
   # The directory of the `.ovpn` files (e.g./etc/openvpn/provider)
   OVPN_DIR="${1%/}"
 
